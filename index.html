@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>UTM Builder</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="col-4 container d-flex align-items-center min-vh-100">
+    <div class="justify-content-center">
+        <div class="mx-0 px-0">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div id="qbox-container">
+                <form class="needs-validation" id="form-wrapper" method="post" name="form-wrapper" novalidate>
+                    <div id="steps-container">
+                        <div class="step">
+                            <div id="title-container">
+                                <h1>UTM Builder</h1>
+                                <p>Welcome to my UTM builder. A UTM, or Urchin Tracking Module, are a group of text parameters given to a link that allows for the user to track the traffic coming from the link. NOTE: a selection must be made at each step for a link to be generated.</p>
+                                <h4>Please enter your website's URL below.</h4>
+                                <div class="form-check ps-0 q-box">
+                                    <div class="q-box__question">
+                                        <input class="form-control" id="url-input" name="url-input" type="text" placeholder="example.com">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step" id="medium">
+                            <h4>Please select a medium</h4>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input q-checkbox" id="q_2_cpc" name="medium_select" type="radio" value="cpc" onclick="mediumSelector()">
+                                            <label class="form-check-label q_label" for="q_2_cpc">CPC</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input" id="q_2_social" name="medium_select" type="radio" value="social" onclick="mediumSelector()">
+                                            <label class="form-check-label q_label" for="q_2_social">Social Media</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input" id="q_2_email" name="medium_select" type="radio" value="email" onclick="mediumSelector()">
+                                            <label class="form-check-label q_label" for="q_2_email">Email</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input" id="q_2_site" name="medium_select" type="radio" value="site" onclick="mediumSelector()">
+                                            <label class="form-check-label q_label" for="q_2_site">Another site</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input" id="q_2_video" name="medium_select" type="radio" value="video" onclick="mediumSelector()">
+                                            <label class="form-check-label q_label" for="q_2_video">Video</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="email_source" id="email_source">
+                                <h4>Please enter your email address</h4>
+                                <div class="row">
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-control" id="email-input" name="email-input" type="text" placeholder="example@gmail.com">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="site_source" id="site_source">
+                                <h4>Please enter your website URL</h4>
+                                <div class="row">
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-control" id="site-input" name="site-input" type="text" placeholder="example.com">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cpc_source" id="cpc_source">
+                                <h4>Please select a source</h4>
+                                <div class="row">
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input" id="q_3_google" name="source_select" type="radio" value="google">
+                                            <label class="form-check-label q_label" for="q_3_google">Google</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input" id="q_3_facebook" name="source_select" type="radio" value="facebook">
+                                            <label class="form-check-label q_label" for="q_3_facebook">Facebook</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input" id="q_3_instagram" name="source_select" type="radio" value="instagram">
+                                            <label class="form-check-label q_label" for="q_3_instagram">Instagram</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input" id="q_3_twitter" name="source_select" type="radio" value="twitter">
+                                            <label class="form-check-label q_label" for="q_3_twitter">Twitter</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input" id="q_3_snapchat" name="source_select" type="radio" value="snapchat">
+                                            <label class="form-check-label q_label" for="q_3_snapchat">Snapchat</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input" id="q_3_linkedin" name="source_select" type="radio" value="linkedin">
+                                            <label class="form-check-label q_label" for="q_3_linkedin">Linkedin</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input" id="q_3_pinterest" name="source_select" type="radio" value="pinterest">
+                                            <label class="form-check-label q_label" for="q_3_pinterest">Pinterest</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="socialmedia_source" id="socialmedia_source">
+                                <h4>Please select a source</h4>
+                                <div class="row">
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input" id="q_4_facebook" name="source_select" type="radio" value="facebook">
+                                            <label class="form-check-label q_label" for="q_4_facebook">Facebook</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input" id="q_4_instagram" name="source_select" type="radio" value="instagram">
+                                            <label class="form-check-label q_label" for="q_4_instagram">Instagram</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input" id="q_4_twitter" name="source_select" type="radio" value="twitter">
+                                            <label class="form-check-label q_label" for="q_4_twitter">Twitter</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input" id="q_4_snapchat" name="source_select" type="radio" value="snapchat">
+                                            <label class="form-check-label q_label" for="q_4_snapchat">Snapchat</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input" id="q_4_linkedin" name="source_select" type="radio" value="linkedin">
+                                            <label class="form-check-label q_label" for="q_4_linkedin">Linkedin</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input" id="q_4_pinterest" name="source_select" type="radio" value="pinterest">
+                                            <label class="form-check-label q_label" for="q_4_pinterest">Pinterest</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video_source" id="video_source">
+                                <h4>Please select a source</h4>
+                                <div class="row">
+                                    <div class="form-check ps-0 q-box">
+                                        <div class="q-box__question">
+                                            <input class="form-check-input q_input" id="q_5_youtube" name="source_select" type="radio" value="youtube">
+                                            <label class="form-check-label q_label" for="q_5_youtube">YouTube</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Enter your campaign name</h4>
+                            <div class="mt-1">
+                                <input class="form-control" id="campaign" name="campaign" type="text">
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="mt-1">
+                                <div class="closing-text">
+                                    <h4>Your UTM is ready! Please press submit to confirm.</h4>
+                                    <a class="resulttext" id="result">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q-box__buttons">
+                        <button id="prev-btn" type="button">Previous</button>
+                        <button id="next-btn" type="button">Next</button>
+                        <button onclick="finishedUTM()" id="submit-btn" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/script.js"></script>
+<script src="js/cookie.js"></script>
+<script src="js/options.js"></script>
+</body>
+</html>
